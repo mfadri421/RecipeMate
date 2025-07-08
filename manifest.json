@@ -1,7 +1,7 @@
 
 {
-  "name": "BenchBuddy Lab Assistant",
-  "short_name": "Lab Assistant",
+  "name": "RecipeMate Kitchen Helper",
+  "short_name": "Kitchen Helper",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
