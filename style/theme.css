@@ -1,0 +1,197 @@
+:root {
+  --color-bg: #f6f8fa;
+  --color-surface: #ffffff;
+  --color-header: #12326b;
+  --color-accent: #21b573;
+  --color-accent-dark: #157a4e;
+  --color-primary: #2366b8;
+  --color-primary-hover: #185396;
+  --color-text: #1a1a1a;
+  --color-muted: #b0b8c1;
+  --color-border: #d1e3ec;
+  --color-progress-bg: #e8eef2;
+  --color-progress-bar: #21b573;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--color-header);
+  color: #fff;
+  padding: 2rem 0 1.2rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(18, 50, 107, 0.07);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  margin-top: 0.5em;
+  color: #cdd6e6;
+  font-size: 1.25rem;
+}
+
+/* Center all main content */
+main, main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: var(--color-surface);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(35, 102, 184, 0.06);
+  padding: 2.2rem 2rem 2.5rem 2rem;
+}
+
+#progress-container {
+  background: var(--color-progress-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  height: 18px;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#progress-bar {
+  background: var(--color-progress-bar);
+  height: 100%;
+  width: 0;
+  transition: width 0.4s cubic-bezier(.4,0,.2,1);
+  color: #fff;
+  line-height: 18px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+#step-details,
+#protocol-container,
+.protocol-upload,
+.step-navigation,
+.audio-toggle,
+.timer-controls,
+.font-controls,
+.export-controls {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Center the font-controls label and buttons horizontally */
+.font-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.step-navigation,
+.timer-controls,
+.font-controls,
+.export-controls {
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+label,
+select,
+textarea {
+  display: block;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+#step-details {
+  background: var(--color-bg);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(35, 102, 184, 0.04);
+  padding: 1.5rem 1.2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--color-border);
+}
+
+button, .button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35em 1em;    /* smaller */
+  font-size: 0.96rem;     /* smaller */
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  margin: 0 0.2em;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 4px rgba(35, 102, 184, 0.06);
+}
+
+button:hover, .button:focus {
+  background: var(--color-primary-hover);
+  outline: none;
+}
+
+button:active {
+  background: var(--color-accent-dark);
+}
+
+#success-message {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 2rem 0 1rem 0;
+  font-size: 1rem;
+  background: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  header {
+    padding: 1.2rem 0 0.8rem 0;
+  }
+  #progress-container,
+  #step-details,
+  #protocol-container,
+  .protocol-upload,
+  .step-navigation,
+  .audio-toggle,
+  .timer-controls,
+  .font-controls,
+  .export-controls {
+    max-width: 95vw;
+  }
+}
