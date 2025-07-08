@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BenchBuddy Lab Assistant</title>
+  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" href="style/theme.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.7.0/docx.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>BenchBuddy Lab Assistant</h1>
+    <p class="subtitle">An accessible companion for lab protocols</p>
+  </header>
+
+  <main>
+    <section>
+      <label for="protocol-select"><strong>Select Protocol:</strong></label>
+      <select id="protocol-select">
+        <option value="default_protocol.json">Sample PCR Protocol</option>
+        <option value="nextera_xt_library_prep.json">Nextera XT Library Prep</option>
+        <option value="olink_pea_workflow.json">Olink PEA Workflow</option>
+      </select>
+
+      <div class="protocol-upload">
+        <label for="upload-file"><strong>Upload Custom Protocol (.xlsx):</strong></label>
+        <input type="file" id="upload-file" accept=".xlsx" />
+        <button id="upload-protocol">Upload & Add to BenchBuddy</button>
+      </div>
+
+      <div id="protocol-container"></div>
+      <div id="step-details"></div>
+
+      <div class="step-navigation">
+        <button id="back-step">◀ Back Step</button>
+        <button id="next-step">Next Step ▶</button>
+      </div>
+
+      <textarea id="journal" rows="4" cols="60" placeholder="Notes for this step..."></textarea>
+
+      <div class="audio-toggle">
+        <label><input type="checkbox" id="toggle-audio" checked /> Enable Voice Narration</label>
+      </div>
+
+      <div id="progress-container">
+        <div id="progress-bar" role="progressbar" aria-valuenow="0"
+             aria-valuemin="0" aria-valuemax="100">0%</div>
+      </div>
+
+      <div class="timer-controls">
+        <button id="start-timer">Start Timer ⏱️</button>
+        <button id="pause-timer">Pause ⏸️</button>
+        <button id="reset-timer">Reset ⏹️</button>
+        <span id="timer-display"></span>
+      </div>
+
+<div class="flash-toggle">
+  <label>
+    <input type="checkbox" id="toggle-flash" checked />
+    Enable Screen Flash (for timer alerts)
+  </label>
+</div>
+      
+      <div class="font-controls">
+        <label><strong>Text Size:</strong></label>
+        <button id="decrease-font">A−</button>
+        <button id="increase-font">A+</button>
+      </div>
+
+      <div class="export-controls">
+        <button id="export-excel">Export Batch Record to Excel 📊</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BenchBuddy Lab Tools</p>
+  </footer>
+
+  <script>
+    // Prime audio access
+    document.addEventListener('click', () => {
+      const sounds = [
+        new Audio('sounds/mixkit-achievement-bell-600.wav'),
+        new Audio('sounds/mixkit-cooking-bell-ding-1791.wav')
+      ];
+      sounds.forEach(sound => {
+        sound.play().then(() => sound.pause()).catch(() => {});
+      });
+    }, { once: true });
+  </script>
+
+  <script src="js/appLogic.js"></script>
+  <script src="js/ProtocolConverter.js"></script>
+</body>
+</html>

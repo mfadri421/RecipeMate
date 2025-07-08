@@ -1,0 +1,10 @@
+
+{
+  "name": "BenchBuddy Lab Assistant",
+  "short_name": "Lab Assistant",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0072c0",
+  "icons": []
+}
