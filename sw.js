@@ -1,7 +1,7 @@
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('lab-assistant-cache').then(cache => {
+    caches.open('kitchen-helper-cache').then(cache => {
       return cache.addAll([
         './',
         './index.html',
