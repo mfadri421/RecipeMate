@@ -54,11 +54,11 @@ function exportProtocolToExcel(protocol) {
 }
 
 function saveProtocolsToLocalStorage() {
-  localStorage.setItem("benchbuddyProtocols", JSON.stringify(uploadedProtocols));
+  localStorage.setItem("RecipeMateProtocols", JSON.stringify(uploadedProtocols));
 }
 
 function loadProtocolsFromLocalStorage() {
-  const stored = localStorage.getItem("benchbuddyProtocols");
+  const stored = localStorage.getItem("RecipeMateProtocols");
   if (stored) {
     try {
       const parsed = JSON.parse(stored);
@@ -86,7 +86,7 @@ function embedProtocolConversionUI() {
   container.style.marginTop = '2em';
   container.innerHTML = `
     <hr/>
-    <h3>Convert Text Protocol to BenchBuddy Format</h3>
+    <h3>Convert Text Protocol to RecipeMate Format</h3>
     <label><strong>Protocol Title:</strong></label><br/>
     <input id="protocolTitle" type="text" placeholder="e.g., My Protocol" style="width:100%; margin-bottom:0.5em;"><br/>
     <textarea id="protocolInput" rows="6" style="width:100%;" placeholder="Paste your protocol here..."></textarea><br/>
